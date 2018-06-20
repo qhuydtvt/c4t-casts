@@ -24,7 +24,7 @@ class BoxCollider(GameObject):
     def overlap(self, other):
         left1, right1, top1, bot1 = self.corners()
         left2, right2, top2, bot2 = other.corners()
-        if left1 >= right2 and right1 <= left2 and top1 >= bot2 and bot1 <= top2:
+        if left1 <= right2 and right1 >= left2 and top1 <= bot2 and bot1 >= top2:
             return True
         else:
             return False
