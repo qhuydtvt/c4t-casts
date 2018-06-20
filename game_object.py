@@ -36,9 +36,12 @@ class GameObject:
         self.y = y
         self.image = None
         self.is_active = True
+        self.box_collider = None
 
     def update(self):
-        pass
+        if self.box_collider is not None:
+            self.box_collider.x = self.x
+            self.box_collider.y = self.y
 
     def render(self, canvas):
         if self.image is not None:
@@ -46,6 +49,8 @@ class GameObject:
             height = self.image.get_height()
             render_pos = (self.x - width / 2, self.y - height / 2)
             canvas.blit(self.image, render_pos)
+        if self.box_collider is not None:
+            self.box_collider.render(canvas)
 
     def deactivate(self):
         self.is_active = False
