@@ -2,6 +2,9 @@ import pygame
 from game_object import GameObject
 from physics.box_collider import BoxCollider
 
+from game_object import collide_with
+from enemy.enemy import Enemy
+
 
 class PlayerBullet(GameObject):
     def __init__(self, x, y):
@@ -11,6 +14,12 @@ class PlayerBullet(GameObject):
 
     def update(self):
         GameObject.update(self)
+
+        collide_list = collide_with(self.box_collider)
+        for game_object in collide_list:
+            if type(game_object) == Enemy:
+                game_object.deactivate()
+                self.deactivate()
 
         self.move()
         self.deactivate_if_needed()

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c7f24332-de22-4ca0-aebb-c2ddaa5c3b33" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/physics/box_collider.py" beforeDir="false" afterPath="$PROJECT_DIR$/physics/box_collider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_object.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/player_bullet.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/player_bullet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,14 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="box_collider.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/physics/box_collider.py">
+      <file leaf-file-name="player_bullet.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/player/player_bullet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="238">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_object.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game_object.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -61,10 +71,11 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/player/player.py" />
         <option value="$PROJECT_DIR$/enemy/enemy.py" />
-        <option value="$PROJECT_DIR$/game_object.py" />
-        <option value="$PROJECT_DIR$/player/player_bullet.py" />
         <option value="$PROJECT_DIR$/test_box_collider.py" />
         <option value="$PROJECT_DIR$/physics/box_collider.py" />
+        <option value="$PROJECT_DIR$/tests/test_box_collider.py" />
+        <option value="$PROJECT_DIR$/player/player_bullet.py" />
+        <option value="$PROJECT_DIR$/game_object.py" />
       </list>
     </option>
   </component>
@@ -104,7 +115,7 @@
             <path>
               <item name="c4t-casts" type="b2602c69:ProjectViewProjectNode" />
               <item name="c4t-casts" type="462c0819:PsiDirectoryNode" />
-              <item name="physics" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -141,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_box_collider">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="c4t-casts" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,6 +166,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_box_collider (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="c4t-casts" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_box_collider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,11 +210,13 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.test_box_collider" />
+      <item itemvalue="Python.test_box_collider (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_box_collider" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test_box_collider (1)" />
+        <item itemvalue="Python.test_box_collider" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1529471304537</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Try fix box collider overlap()">
+      <created>1529482347212</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1529482347212</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add test box collider">
+      <created>1529482522800</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529482522800</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -279,19 +324,11 @@
     <MESSAGE value="Prepared for casting" />
     <MESSAGE value="Add box collider" />
     <MESSAGE value="Setup box collider in game objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup box collider in game objects" />
+    <MESSAGE value="Try fix box collider overlap()" />
+    <MESSAGE value="Add test box collider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test box collider" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/player/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/player/player_bullet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -585,27 +622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/player_bullet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -616,12 +636,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_box_collider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/physics/box_collider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="504">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/player_bullet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
