@@ -30,12 +30,13 @@ def recycle(t, x, y):
     return new_game_object
 
 
-def collide_with(box_collider):
+def collide_with(box_collider, wanted_type):
     collide_list = []
     for game_object in game_objects:
         if game_object.is_active and game_object.box_collider is not None:
-            if game_object.box_collider.overlap(box_collider):
-                collide_list.append(game_object)
+            if type(game_object) == wanted_type:
+                if game_object.box_collider.overlap(box_collider):
+                    collide_list.append(game_object)
 
     return collide_list
 

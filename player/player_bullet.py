@@ -15,11 +15,10 @@ class PlayerBullet(GameObject):
     def update(self):
         GameObject.update(self)
 
-        collide_list = collide_with(self.box_collider)
+        collide_list = collide_with(self.box_collider, Enemy)
         for game_object in collide_list:
-            if type(game_object) == Enemy:
-                game_object.deactivate()
-                self.deactivate()
+            game_object.deactivate()
+            self.deactivate()
 
         self.move()
         self.deactivate_if_needed()
