@@ -4,13 +4,14 @@ from physics.box_collider import BoxCollider
 
 from game_object import collide_with
 from enemy.enemy import Enemy
+from renderers.image_renderer import ImageRenderer
 
 
 class PlayerBullet(GameObject):
     def __init__(self, x, y):
         GameObject.__init__(self, x, y)
-        self.image = pygame.image.load('images/player/player_bullet1.png')
         self.box_collider = BoxCollider(12, 48)
+        self.renderer = ImageRenderer('images/player/player_bullet1.png')
 
     def update(self):
         GameObject.update(self)

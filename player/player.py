@@ -3,16 +3,17 @@ from player.player_bullet import PlayerBullet
 import game_object
 from game_object import GameObject
 from frame_counter import FrameCounter
+from renderers.image_renderer import ImageRenderer
 
 
 class Player(GameObject):
     # 1. Create constructor (properties)
     def __init__(self, x, y, input_manager):
         GameObject.__init__(self, x, y)
-        self.image = pygame.image.load('images/player/player1.png')
         self.input_manager = input_manager
         self.shoot_lock = False
         self.counter = FrameCounter(30)
+        self.renderer = ImageRenderer('images/player/player1.png')
 
     # 2. Describe action / method / behavior
     def update(self):
