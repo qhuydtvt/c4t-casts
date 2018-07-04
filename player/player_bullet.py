@@ -2,9 +2,10 @@ import pygame
 from game_object import GameObject
 from physics.box_collider import BoxCollider
 
-from game_object import collide_with
+from game_object import collide_with, add as add_game_object
 from enemy.enemy import Enemy
 from renderers.image_renderer import ImageRenderer
+from enemy.enemy_explosion import EnemyExplosion
 
 
 class PlayerBullet(GameObject):
@@ -18,6 +19,8 @@ class PlayerBullet(GameObject):
 
         collide_list = collide_with(self.box_collider, Enemy)
         for game_object in collide_list:
+            explosion = EnemyExplosion(game_object.x, game_object.y)
+            add_game_object(explosion)
             game_object.deactivate()
             self.deactivate()
 
