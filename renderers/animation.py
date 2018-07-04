@@ -1,15 +1,17 @@
 import pygame
 from frame_counter import FrameCounter
 
+
 class Animation:
-    def __init__(self, image_urls):
+    def __init__(self, image_urls, loop=False, frame_delay=3):
         self.images = [pygame.image.load(image_url) for image_url in image_urls]
         self.image_index = 0
         self.finished = False
-        self.frame_counter = FrameCounter(3)
+        self.frame_counter = FrameCounter(frame_delay)
+        self.loop = loop
 
     def render(self, canvas, x, y):
-        if not self.finished:
+        if not self.finished or self.loop:
             # 1 Display current image
             current_image = self.images[self.image_index]
             width = current_image.get_width()
@@ -25,5 +27,7 @@ class Animation:
                 self.frame_counter.reset()
                 if self.image_index < len(self.images) - 1:
                     self.image_index += 1
+                elif self.loop:
+                    self.image_index = 0
                 else:
                     self.finished = True
