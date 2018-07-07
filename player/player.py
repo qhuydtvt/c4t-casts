@@ -3,7 +3,7 @@ from player.player_bullet import PlayerBullet
 import game_object
 from game_object import GameObject
 from frame_counter import FrameCounter
-from renderers.image_renderer import ImageRenderer
+from player.player_animator import PlayerAnimator
 
 
 class Player(GameObject):
@@ -13,29 +13,35 @@ class Player(GameObject):
         self.input_manager = input_manager
         self.shoot_lock = False
         self.counter = FrameCounter(30)
-        self.renderer = ImageRenderer('images/player/player1.png')
+        self.renderer = PlayerAnimator()
+        self.dx = 0
+        self.dy = 0
 
     # 2. Describe action / method / behavior
     def update(self):
         GameObject.update(self)
         self.move()
+        self.update_animator()
         self.shoot()
 
+    def update_animator(self):
+        self.renderer.update(self.dx, self.dy)
+
     def move(self):
-        dx = 0
-        dy = 0
+        self.dx = 0
+        self.dy = 0
 
         if self.input_manager.right_pressed:
-            dx += 3
+            self.dx += 3
         if self.input_manager.left_pressed:
-            dx -= 3
+            self.dx -= 3
         if self.input_manager.down_pressed:
-            dy += 3
+            self.dy += 3
         if self.input_manager.up_pressed:
-            dy -= 3
+            self.dy -= 3
 
-        self.x += dx
-        self.y += dy
+        self.x += self.dx
+        self.y += self.dy
 
     def shoot(self):
         if self.input_manager.x_pressed and not self.shoot_lock:
